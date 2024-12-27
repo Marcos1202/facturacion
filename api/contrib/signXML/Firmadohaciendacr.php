@@ -68,6 +68,7 @@ class Firmadocr
             exit;
         }
         
+       
 
         if (openssl_pkcs12_read($pfx, $key, $clavecertificado)) {
             $this->publicKey    = $key["cert"];
@@ -77,10 +78,10 @@ class Firmadocr
             $this->Modulus    = base64_encode($complem['rsa']['n']);
             $this->Exponent   = base64_encode($complem['rsa']['e']);
         } else {
+           
             echo "Error: No se puede leer el almacén de certificados o la clave no es la correcta.\n";
             exit;
         }
-
         $this->signPolicy         = self::$POLITICA_FIRMA;
         $this->signatureID        = "Signature-ddb543c7-ea0c-4b00-95b9-d4bfa2b4e411";
         $this->signatureValue     = "SignatureValue-ddb543c7-ea0c-4b00-95b9-d4bfa2b4e411";

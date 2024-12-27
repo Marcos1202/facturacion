@@ -363,9 +363,12 @@ function genXMLFe()
         
         if (isset($d->descuento) && $d->descuento != "" && $d->descuento != 0){
             //Delimita el array a solo 15 elementos
+            
             $d->descuento= array_slice($d->descuento, 0, 5);
+            
             foreach ($d->descuento as $dsc)
             {
+                
                 if (isset($dsc->montoDescuento) && $dsc->montoDescuento != "" && isset($dsc->naturalezaDescuento) && $dsc->naturalezaDescuento != "" )
                     $xmlString .= '
                     <Descuento>

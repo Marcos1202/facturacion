@@ -88,6 +88,7 @@ function send()
 
     //$datosJ= http_build_query($datos);
     $mensaje = json_encode($datos);
+    //return $mensaje;
     grace_debug("JSON:" . $mensaje);
 
     $header = array(
@@ -204,7 +205,7 @@ function sendTE()
     //$datosJ= http_build_query($datos);
 
     $mensaje = json_encode($datos);
-
+   
     $header = array(
         'Authorization: bearer ' . params_get('token'),
         'Content-Type: application/json'

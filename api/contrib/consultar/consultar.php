@@ -71,35 +71,35 @@ function consutar()
     }
     else
     {
-        $data = json_decode($response, true);
-
+       /*  $data = json_decode($response, true);
+ */
         // Verificar si la llave "ind-estado" existe
-        if (isset($data['ind-estado'])) {
+       /*  if (isset($data['ind-estado'])) {
             // Crear una nueva llave "ind_estado" y asignarle el valor de "ind-estado"
             $data['ind_estado'] = $data['ind-estado'];
         
             // Eliminar la llave "ind-estado" original
-            unset($data['ind-estado']);
+            //unset($data['ind-estado']);
         
             // Codificar de nuevo el arreglo como JSON
             $response = json_encode($data);
         
             // Imprimir el JSON modificado
           
-        } 
+        }  */
         
-         if (isset($data['respuesta-xml'])) {
+        /*  if (isset($data['respuesta-xml'])) {
             // Crear una nueva llave "ind_estado" y asignarle el valor de "respuesta-xml"
             $data['respuesta_xml'] = $data['respuesta-xml'];
         
             // Eliminar la llave "ind-estado" original
-            unset($data['respuesta-xml']);
+           // unset($data['respuesta-xml']);
         
             // Codificar de nuevo el arreglo como JSON
             $response = json_encode($data);
         
            
-        }
+        } */
         $response = json_decode($response);
         return $response;
     }
